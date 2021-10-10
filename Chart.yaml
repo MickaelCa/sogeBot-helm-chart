@@ -1,0 +1,6 @@
+apiVersion: v2
+name: sogebot
+description: Free Twitch Bot built on Node.js
+type: application
+version: 0.1.0
+appVersion: "13.13.0"
