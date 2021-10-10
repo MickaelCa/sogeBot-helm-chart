@@ -31,10 +31,16 @@ spec:
           image: "{{ template "sogebot.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
+            {{- if ne .Values.sogeBot.database.type "better-sqlite3" and (.Values.sogeBot.database.username or .Values.sogeBot.database.password) }}
             - secretRef:
                 name: {{ include "sogebot.fullname" . }}
+            {{- end }}
             - configMapRef:
                 name: {{ include "sogebot.fullname" . }}
+          {{- if .Values.sogeBot.env }}
+          env:
+            {{- toYaml .Values.sogeBot.env | nindent 12 }}
+          {{- end }}
           volumeMounts:
             - mountPath: /app/shared
               name: data

@@ -6,7 +6,9 @@ sogeBot:
   loglevel: info
   timezone: Europe/Paris
   cors: "*"
-
+  env: []
+#    - name: name
+#      value: value
   database:
     # For Postgres
     type: postgres
