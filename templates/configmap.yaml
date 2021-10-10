@@ -14,6 +14,6 @@ data:
   {{- if .Values.sogeBot.database.port }}
   TYPEORM_PORT: {{ .Values.sogeBot.database.port }}
   {{- end }}
-  {{- if .Values.sogeBot.database.type }}
+  {{- if .Values.sogeBot.database.database }}
   TYPEORM_DATABASE: {{ .Values.sogeBot.database.database }}
   {{- end }}
