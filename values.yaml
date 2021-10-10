@@ -44,8 +44,6 @@ persistence:
     - ReadWriteOnce
   subPath: ""
 
-replicaCount: 1
-
 image:
   registry: docker.io
   repository: sogebot/release
