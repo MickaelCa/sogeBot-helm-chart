@@ -31,7 +31,7 @@ spec:
           image: "{{ template "sogebot.image" . }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
-            {{- if ne .Values.sogeBot.database.type "better-sqlite3" and (.Values.sogeBot.database.username or .Values.sogeBot.database.password) }}
+            {{- if and (ne .Values.sogeBot.database.type "better-sqlite3") (or (.Values.sogeBot.database.username) (.Values.sogeBot.database.password))}}
             - secretRef:
                 name: {{ include "sogebot.fullname" . }}
             {{- end }}
