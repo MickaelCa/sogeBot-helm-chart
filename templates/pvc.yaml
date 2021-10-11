@@ -1,5 +1,5 @@
 {{- if .Values.persistence.enabled -}}
-  {{- $fullName := include "sogebot.fullname" . -}}
+{{- $fullName := include "sogebot.fullname" . -}}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -19,9 +19,6 @@ spec:
   {{- else }}
   storageClassName: "{{ .Values.persistence.storageClass }}"
   {{- end }}
-  {{- end }}
-  {{- if .Values.persistence.volumeBindingMode }}
-  volumeBindingModeName: "{{ .Values.persistence.volumeBindingMode }}"
   {{- end }}
   resources:
     requests:
@@ -47,10 +44,7 @@ spec:
   storageClassName: "{{ .Values.persistence.storageClass }}"
   {{- end }}
   {{- end }}
-  {{- if .Values.persistence.volumeBindingMode }}
-  volumeBindingModeName: "{{ .Values.persistence.volumeBindingMode }}"
-  {{- end }}
   resources:
     requests:
       storage: "{{ .Values.persistence.size }}"
-  {{- end -}}
+{{- end -}}
