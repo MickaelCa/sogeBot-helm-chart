@@ -10,13 +10,13 @@ sogeBot:
 #    - name: name
 #      value: value
   database:
-    # For Postgres
-    type: postgres
-    host: postgres
-    port: 5432
-    database: postgres
-    username: postgres
-    password: postgres
+#    # For Postgres
+#    type: postgres
+#    host: postgres
+#    port: 5432
+#    database: postgres
+#    username: postgres
+#    password: postgres
 #    # For MySQL
 #    type: mysql
 #    host: mysql
@@ -29,7 +29,7 @@ sogeBot:
 #    database: ./sogebot.db
 
 persistence:
-  enabled: false
+  enabled: true
   ## Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
